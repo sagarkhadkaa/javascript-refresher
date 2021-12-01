@@ -50,7 +50,7 @@
 // const color = ["red", "blue", "green"];
 // for (let index in color) console.log(index, color[index]);
 
-//*****for...of loop */
+//*****for...of loop only for itterables*/
 // const colors = ["red", "blue", "green"];
 // for (let color of colors) console.log(color);
 
@@ -143,16 +143,23 @@
 // }
 
 // Better Approch of showing prime
-showPrimes(20);
-function showPrimes(limit) {
-    for (let number = 2; number <= limit; number++) {
-        if (isPrime(number)) console.log(number);
-    }
-}
+// showPrimes(20);
+// function showPrimes(limit) {
+//     for (let number = 2; number <= limit; number++) {
+//         if (isPrime(number)) console.log(number);
+//     }
+// }
 
-function isPrime(number) {
-    for (let factor = 2; factor < number; factor++)
-        if (number % factor == 0) return false;
+// function isPrime(number) {
+//     for (let factor = 2; factor < number; factor++)
+//         if (number % factor == 0) return false;
 
-    return true;
-}
+//     return true;
+// }
+
+//Adding Arrays
+const number = [3, 4];
+number.push(5, 6);
+number.unshift(1, 2);
+number.splice(2, 0, "a", "b");
+console.log(number);
