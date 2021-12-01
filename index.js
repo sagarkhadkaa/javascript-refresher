@@ -277,10 +277,28 @@
 
 //********Sorting Numbers in  ascending */
 
-const numbers = [4, 2, 11, 1, 23];
-// numbers.sort((a, b) => a - b); //function should return -ve if 1st number is smaller, 0 if equal and +ve otherwise
+// const numbers = [4, 2, 11, 1, 23];
+// // numbers.sort((a, b) => a - b); //function should return -ve if 1st number is smaller, 0 if equal and +ve otherwise
+// // console.log(numbers);
+
+// //********Sorting Number in descending order */
+// numbers.sort((a, b) => b - a);
 // console.log(numbers);
 
-//********Sorting Number in descending order */
-numbers.sort((a, b) => b - a);
-console.log(numbers);
+//********Sorting objects */
+const courses = [
+    { id: 1, name: "Nodejs" },
+    { id: 2, name: "javascript" },
+];
+courses.sort(function (nameA, nameB) {
+    //return -1 if a<b
+    //return 1 if a>b
+    //return o if a=b
+    nameA = nameA.name.toLowerCase();
+    nameB = nameB.name.toLowerCase();
+    if (nameA < nameB) return -1;
+    if (nameA > nameB) return 1;
+    return 0;
+});
+
+console.log(courses);
