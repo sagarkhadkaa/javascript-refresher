@@ -167,10 +167,87 @@
 // console.log(number);
 
 //Finding a object, object is reference type
-const courses = [
-    { id: 1, name: "a" },
-    { id: 2, name: "b" },
-];
+// const courses = [
+//     { id: 1, name: "a" },
+//     { id: 2, name: "b" },
+// ];
 
-const course = courses.find((course) => course.name === "a");
-console.log(course);
+// const course = courses.find((course) => course.name === "a");
+// console.log(course);
+
+// //*******Removing Elements******/
+// const numbers = [1, 2, 3, 4, 5];
+
+// //End
+// // const last = numbers.pop();
+// // console.log(last);
+
+// //Begining
+// // const first = numbers.shift();
+// // console.log(numbers);
+
+// //Middle
+// numbers.splice(3, 2);
+// console.log(numbers);
+
+// let numbers = [1, 2, 3, 4, 5];
+// let another = numbers;
+
+// //Solution 1
+// numbers = [];
+
+//Solution 2
+// numbers.length = 0;
+// console.log(numbers);
+
+//Solution 3
+// numbers.splice(0, numbers.length);
+// console.log(numbers);
+
+// //Solution 4
+// while (numbers.length > 0) {
+//     numbers.pop();
+// }
+// console.log(numbers);
+
+// Combining and Slicing Arrays [Here values are copied]
+// const first = [1, 2, 3];
+// const second = [4, 5, 6];
+
+// const combined = first.concat(second);
+// console.log(combined);
+
+// const slice = combined.slice(3);
+// console.log(slice);
+
+//***** Combining and Slicing Arrays [Here References is combined] */
+// const first = [{ id: 1 }];
+// const second = [4, 5, 6];
+
+// const combined = first.concat(second);
+// first[0].id = 10;
+// console.log(combined);
+
+// const slice = combined.slice(3);
+// console.log(slice);
+
+//*******[BETTER APPROCH] Combining and splicing arrays using spread operator */
+// const first = [{ id: 1 }];
+// const second = [4, 5, 6];
+
+// const combined = [...first, "a", ...second, "b"];
+// console.log(combined);
+
+// const copy = [...combined];
+// console.log(copy);
+
+//******Itterating ana array */
+const numbers = [3, 4, 5];
+// const numbers = [
+//     { id: 201, name: "Teachers room" },
+//     { id: 301, name: "Administation Block" },
+// ];
+
+// for (let number of numbers) console.log(number);
+
+numbers.forEach((number, index) => console.log(`[${index}]=>`, number));
