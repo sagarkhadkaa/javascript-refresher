@@ -242,7 +242,7 @@
 // console.log(copy);
 
 //******Itterating ana array */
-const numbers = [3, 4, 5];
+// const numbers = [3, 4, 5];
 // const numbers = [
 //     { id: 201, name: "Teachers room" },
 //     { id: 301, name: "Administation Block" },
@@ -250,4 +250,37 @@ const numbers = [3, 4, 5];
 
 // for (let number of numbers) console.log(number);
 
-numbers.forEach((number, index) => console.log(`[${index}]=>`, number));
+// numbers.forEach((number, index) => console.log(`[${index}]=>`, number));
+
+//********Joining Arrays */
+// const numbers = [3, 4, 5, 6];
+// const joined = numbers.join("-");
+// console.log(joined);
+
+// const message = "This is my first message";
+// const parts = message.split(" ");
+// console.log(parts);
+
+// const combined = parts.join("-");
+// console.log(combined);
+
+//********Sorting Arrays */
+
+//********Sorting albhabetically ascending */
+// const names = ["apple", "cat", "banana"];
+// // names.sort();
+// // console.log(names);
+// //********Sorting albhabetically descending- first sort in ascending then reverse it */
+// names.sort();
+// names.reverse();
+// console.log(names);
+
+//********Sorting Numbers in  ascending */
+
+const numbers = [4, 2, 11, 1, 23];
+// numbers.sort((a, b) => a - b); //function should return -ve if 1st number is smaller, 0 if equal and +ve otherwise
+// console.log(numbers);
+
+//********Sorting Number in descending order */
+numbers.sort((a, b) => b - a);
+console.log(numbers);
