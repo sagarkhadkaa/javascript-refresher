@@ -157,9 +157,20 @@
 //     return true;
 // }
 
+//Array
+
 //Adding Arrays
-const number = [3, 4];
-number.push(5, 6);
-number.unshift(1, 2);
-number.splice(2, 0, "a", "b");
-console.log(number);
+// const number = [3, 4];
+// number.push(5, 6);
+// number.unshift(1, 2);
+// number.splice(2, 0, "a", "b");
+// console.log(number);
+
+//Finding a object, object is reference type
+const courses = [
+    { id: 1, name: "a" },
+    { id: 2, name: "b" },
+];
+
+const course = courses.find((course) => course.name === "a");
+console.log(course);
