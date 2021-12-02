@@ -286,19 +286,95 @@
 // console.log(numbers);
 
 //********Sorting objects */
-const courses = [
-    { id: 1, name: "Nodejs" },
-    { id: 2, name: "javascript" },
-];
-courses.sort(function (nameA, nameB) {
-    //return -1 if a<b
-    //return 1 if a>b
-    //return o if a=b
-    nameA = nameA.name.toLowerCase();
-    nameB = nameB.name.toLowerCase();
-    if (nameA < nameB) return -1;
-    if (nameA > nameB) return 1;
-    return 0;
-});
+// const courses = [
+//     { id: 1, name: "Nodejs" },
+//     { id: 2, name: "javascript" },
+// ];
+// courses.sort(function (nameA, nameB) {
+//     //return -1 if a<b
+//     //return 1 if a>b
+//     //return o if a=b
+//     nameA = nameA.name.toLowerCase();
+//     nameB = nameB.name.toLowerCase();
+//     if (nameA < nameB) return -1;
+//     if (nameA > nameB) return 1;
+//     return 0;
+// });
 
-console.log(courses);
+// console.log(courses);
+
+//********Testing some and every*///
+//some()-atleast one true=>true
+//every()-every element true=>true ,otherwise false
+
+// const number = [1, -2, 3, 4];
+// const atLeastOnePositive = number.every(function (value) {
+//     return value >= 0;
+// });
+// console.log(atLeastOnePositive);
+
+//********Filtering */
+// const numbers = [2, 3, -4, 1, 5];
+// const filteredNumber = numbers.filter((number) => number >= 0);
+// console.log(filteredNumber);
+
+//********Filter and Map chaining */
+//We can chain map and filter method
+// const numbers = [2, 3, -4, 1, 5];
+// const items = numbers
+//     .filter((n) => n >= 0)
+//     .map((n) => ({
+//         value: n,
+//     }))
+//     .filter((obj) => obj.value > 1);
+
+// console.log(items);
+
+//********Reducing an array */
+
+//Counting an array using loop
+// const numbers = [2, 3, -4, 50, 2];
+// let sum = 0;
+// for (let n of numbers) sum += n;
+// console.log(sum);
+
+//counting an array using reduce function
+// const numbers = [2, 3, -4, 50, 2];
+// const sum = numbers.reduce(
+//     (accumulator, currentValue) => accumulator + currentValue
+// );
+// console.log(sum);
+
+//Sample exercise
+
+// const numbers = arrayFromRange(-1, 5);
+// console.log(numbers);
+// function arrayFromRange(min, max) {
+//     let requiredArray = [];
+//     for (let i = min; i <= max; i++) requiredArray.push(i);
+
+//     return requiredArray;
+// }
+
+//Search element
+// const numbers = [2, 3, -4, 50, 2];
+
+// console.log(includes(numbers, -2));
+// function includes(array, searchElement) {
+//     for (let element of array) if (element === searchElement) return true;
+//     return false;
+// }
+
+//Exclued the certain element of an array
+// const numbers = [3, 2, 5, 53];
+// const output = except(numbers, [3, 2]);
+// console.log(output);
+// function except(array, excluded) {
+//     const output = [];
+//     for (let element of array) {
+//         if (!excluded.includes(element)) {
+//             output.push(element);
+//         }
+//     }
+//     return output;
+// }
