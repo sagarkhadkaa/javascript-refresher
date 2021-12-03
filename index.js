@@ -378,3 +378,66 @@
 //     }
 //     return output;
 // }
+
+// //Moving an Element
+// const numbers = [10, 5, 15, 40, 55];
+// const output = move(numbers, 2, 2);
+// console.log(output);
+// function move(array, index, offset) {
+//     const position = index + offset;
+//     if (position >= array.length || position < 0) {
+//         console.log("Invalid offset.");
+//         return;
+//     }
+//     const output = [...array];
+//     const element = output.splice(index, 1)[0];
+//     output.splice(position, 0, element);
+//     return output;
+// }
+
+//Count Occurances
+// const numbers = [10, 5, 15, 40, 5, 5];
+
+// const count = countOccurances(numbers, 5);
+// console.log(count);
+
+// function countOccurances(array, searchElement) {
+//     let count = 0;
+//     for (let element of array) {
+//         if (searchElement === element) ++count;
+//     }
+//     return count;
+// }
+
+//Count Occurances using reduce function
+
+// const numbers = [10, 5, 15, 40, 5, 5];
+
+// const count = countOccurances(numbers, 5);
+// console.log(count);
+
+// function countOccurances(array, searchElement) {
+//     return array.reduce((accumulator, current) => {
+//         const occurance = current === searchElement ? 1 : 0;
+//         return accumulator + occurance;
+//     }, 0);
+// }
+
+//Get maximum number of an array
+// const numbers = [1, 2, 43, 23, 44, 5, 84];
+
+// const max = getMax(numbers);
+// console.log(max);
+// function getMax(array) {
+//     array.sort((a, b) => b - a);
+//     return array[0];
+// }
+
+//Getting the maximum number from an array
+const numbers = [1, 2, 43, 23, 44, 5, 84];
+
+const max = getMax([2, 3, 1, 5, 65]);
+console.log(max);
+function getMax(array) {
+    return array.reduce((a, b) => (a > b ? a : b));
+}
