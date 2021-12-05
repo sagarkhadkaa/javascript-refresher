@@ -451,15 +451,101 @@
 //Descending order
 //Pick their title
 
-const movies = [
-    { title: "a", year: 2018, rating: 4.5 },
-    { title: "b", year: 2018, rating: 4.7 },
-    { title: "c", year: 2018, rating: 3 },
-    { title: "d", year: 2017, rating: 4.5 },
-];
-const output = movies
-    .filter((m) => m.year === 2018 && m.rating >= 4)
-    .sort((a, b) => b.rating - a.rating)
-    .sort((a, b) => a.title - b.title)
-    .map((m) => m.title);
-console.log(output);
+// const movies = [
+//     { title: "a", year: 2018, rating: 4.5 },
+//     { title: "b", year: 2018, rating: 4.7 },
+//     { title: "c", year: 2018, rating: 3 },
+//     { title: "d", year: 2017, rating: 4.5 },
+// ];
+// const output = movies
+//     .filter((m) => m.year === 2018 && m.rating >= 4)
+//     .sort((a, b) => b.rating - a.rating)
+//     .sort((a, b) => a.title - b.title)
+//     .map((m) => m.title);
+// console.log(output);
+
+//Function Declarations vs Expressions
+
+/*
+Hoisting => declaration of functions, variables or classes 
+to the top of their scope, 
+prior to execution of the code.
+
+*/
+
+// //Function Declaration
+// walk();
+// function walk() {
+//     console.log("Walk");
+// }
+
+// run();
+// //Anonymous Function Expression
+// let run = function () {
+//     console.log("run");
+// };
+
+//put any number of parameter and sum using arguments;
+// function sum() {
+//     let total = 0;
+//     console.log(arguments);
+//     for (let value of arguments) total += value;
+//     return total;
+// }
+
+// console.log(sum(2, 4, 6, 8, 10));
+
+//The Rest Operator
+// function sum(discount, ...args) {
+//     const total = args.reduce((a, b) => a + b);
+//     return total * (1 - discount);
+// }
+// console.log(sum(0.1, 20, 30));
+
+//Default parameters
+// function interest(principal, rate = 3.5, years = 5) {
+//     //write the default parameter at last or give default parameters if prevous value is given
+//     return (principal * rate * years) / 100;
+// }
+// console.log(interest(10000));
+// console.log(interest(10000, undefined, 10)); //Not recommended
+
+//Getters and Setters
+// const person = {
+//     firstName: "Sagar",
+//     lastName: "Khadka",
+//     get fullName() {
+//         return `${person.firstName} ${person.lastName}`;
+//     },
+//     set fullName(value) {
+//         const parts = value.split(" ");
+//         this.firstName = parts[0];
+//         this.lastName = parts[1];
+//     },
+// };
+
+// person.fullName = "Sajan Khatri";
+// console.log(person);
+
+//Try and Catch
+const person = {
+    firstName: "Sagar",
+    lastName: "Khadka",
+    get fullName() {
+        return `${person.firstName} ${person.lastName}`;
+    },
+    set fullName(value) {
+        if (typeof value !== "string") throw new Error("Value is not a string");
+        const parts = value.split(" ");
+        if (parts.length !== 2) throw new Error("Enter a first and last name");
+        this.firstName = parts[0];
+        this.lastName = parts[1];
+    },
+};
+
+try {
+    person.fullName = "";
+} catch (e) {
+    alert(e);
+}
+console.log(person);
