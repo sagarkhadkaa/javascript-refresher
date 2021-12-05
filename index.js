@@ -656,3 +656,40 @@ prior to execution of the code.
 //     },
 // };
 // video.showTags();
+
+/*Function Exercise */
+
+//Exercise 1
+//sum of arguments and array
+// console.log(sum([1, 2, 3, 4, 5, 6]));
+
+// function sum(...items) {
+//     if (items.length === 1 && Array.isArray(items[0])) items = [...items[0]];
+//     return items.reduce((a, b) => a + b);
+// }
+
+//Area of circle
+// const circle = {
+//     radius: 1,
+//     get area() {
+//         return Math.PI * this.radius * this.radius;
+//     },
+// };
+// circle.radius = 10;
+// console.log(circle.area);
+
+//Throwing and catching error
+// try {
+//     const numbers = [1, 2, 3, 4];
+//     const count = countOccurances(null, 1);
+//     console.log(count);
+// } catch (e) {
+//     console.log(e.message);
+// }
+// function countOccurances(array, searchElement) {
+//     if (!Array.isArray(array)) throw new Error("Invalid array.");
+//     return array.reduce((accumulator, current) => {
+//         const occurance = current === searchElement ? 1 : 0;
+//         return accumulator + occurance;
+//     }, 0);
+// }
