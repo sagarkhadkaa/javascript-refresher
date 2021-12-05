@@ -528,24 +528,131 @@ prior to execution of the code.
 // console.log(person);
 
 //Try and Catch
-const person = {
-    firstName: "Sagar",
-    lastName: "Khadka",
-    get fullName() {
-        return `${person.firstName} ${person.lastName}`;
-    },
-    set fullName(value) {
-        if (typeof value !== "string") throw new Error("Value is not a string");
-        const parts = value.split(" ");
-        if (parts.length !== 2) throw new Error("Enter a first and last name");
-        this.firstName = parts[0];
-        this.lastName = parts[1];
-    },
-};
+// const person = {
+//     firstName: "Sagar",
+//     lastName: "Khadka",
+//     get fullName() {
+//         return `${person.firstName} ${person.lastName}`;
+//     },
+//     set fullName(value) {
+//         if (typeof value !== "string") throw new Error("Value is not a string");
+//         const parts = value.split(" ");
+//         if (parts.length !== 2) throw new Error("Enter a first and last name");
+//         this.firstName = parts[0];
+//         this.lastName = parts[1];
+//     },
+// };
 
-try {
-    person.fullName = "";
-} catch (e) {
-    alert(e);
-}
-console.log(person);
+// try {
+//     person.fullName = "";
+// } catch (e) {
+//     alert(e);
+// }
+// console.log(person);
+
+//Let vs Var
+// function start() {
+//     for (var i = 0; i < 5; i++) console.log(i);
+//     console.log(i);
+// }
+
+// start();
+//var  is function scoped
+//ES9(ES2015): let,const => block-scoped
+//avoid using var keyword
+//function defined here is also global scoped which can be accessed from the window object
+
+//this keyword
+
+/*This refrences the object that is executing the current function. */
+// method=> obj
+//function=>global object(window,global), global object in node
+
+//Example 1
+// const video = {
+//     title: "a",
+//     play() {
+//         console.log(this);
+//     },
+// };
+
+// video.stop = function () {
+//     console.log(this);
+// };
+
+// video.stop();
+
+//Example 2
+// function playVideo() {
+//     console.log(this);
+// }
+// playVideo(); //this refrences the global object
+
+//Example 3
+// function Video(title) {
+//     this.title = title;
+//     console.log(this);
+// }
+// const v = new Video("b");
+
+//Example 4
+// const video = {
+//     title: "a",
+//     tags: ["sajan", "sagar", "roshan"],
+//     showTags() {
+//         this.tags.forEach(function (tags) {
+//             console.log(this.title, tags);
+//         }, this);
+//     },
+// };
+// video.showTags();
+
+//Example 5  (3 approachs)
+
+//Approach 1(Not recomended)
+// const video = {
+//     title: "a",
+//     tags: ["sajan", "sagar", "roshan"],
+//     showTags() {
+//         const self = this;
+//         this.tags.forEach(function (tags) {
+//             console.log(self.title, tags);
+//         });
+//     },
+// };
+// video.showTags();
+
+//Approach 2(Not recomended)
+// function playVideo() {
+//     console.log(this);
+// }
+// playVideo.call({ name: "Mosh" }, 1, 2); //calls playVideo object
+// playVideo.apply({ name: "Sagar" }[(1, 2)]);
+//bind() method is also similar
+// playVideo(); //calls global object
+
+//Approach 2 (Different implementation)
+// const video = {
+//     title: "a",
+//     tags: ["sajan", "sagar", "roshan"],
+//     showTags() {
+//         const self = this;
+//         this.tags.forEach(
+//             function (tags) {
+//                 console.log(self.title, tags);
+//             }.bind(this)
+//         );
+//     },
+// };
+// video.showTags();
+
+//Approach 3 (Recomended)
+// const video = {
+//     title: "a",
+//     tags: ["sajan", "sagar", "roshan"],
+//     showTags() {
+//         const self = this;
+//         this.tags.forEach((tag) => console.log(self.title, tag));
+//     },
+// };
+// video.showTags();
