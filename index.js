@@ -691,5 +691,8 @@ prior to execution of the code.
 //     return array.reduce((accumulator, current) => {
 //         const occurance = current === searchElement ? 1 : 0;
 //         return accumulator + occurance;
-//     }, 0);
-// }
+//     }, 0)
+
+
+///Testing on mobile
+console.log("Testing on mobile")
